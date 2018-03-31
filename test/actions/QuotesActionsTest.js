@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 import uuid from 'uuid';
-import { 
+import {
   addQuote,
   removeQuote,
   upvoteQuote,
-  downvoteQuote 
+  downvoteQuote
 } from '../../src/actions/quotes';
 
 describe('Quotes Actions', () => {
@@ -16,7 +16,7 @@ describe('Quotes Actions', () => {
         votes: 0,
         id: uuid()
       }
-  
+
       expect(addQuote(quote)).to.deep.equal({
         type: 'ADD_QUOTE',
         quote
@@ -42,7 +42,7 @@ describe('Quotes Actions', () => {
     });
   });
 
-  describe('downvoteQuote(quoteId: INteger)', () => {
+  describe('downvoteQuote(quoteId: Integer)', () => {
     it('should return an Object with a type of "DOWNVOTE_QUOTE" and a quoteId', () => {
       expect(downvoteQuote(10)).to.deep.equal({
         type: 'DOWNVOTE_QUOTE',
